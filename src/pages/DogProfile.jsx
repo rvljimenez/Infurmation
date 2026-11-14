@@ -34,32 +34,35 @@ export default function DogProfile() {
 
 function DogDetails({ dog }) {
   const navigate = useNavigate();
+
   return (
-    <div className="flex flex-col gap-8 font-[Fredoka]">
-      <div className="grid lg:grid-cols-[1fr_2fr] gap-8 lg:gap-16">
+    <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 font-[Fredoka]">
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-8 lg:gap-16">
         <img
           src={dog.attributes.images[0].url}
           alt={dog.attributes.name}
-          className="w-full rounded-2xl aspect-square object-cover"
+          className="w-full max-w-lg mx-auto rounded-2xl aspect-square object-cover"
         />
 
         <div className="flex flex-col gap-6">
-          <div className="font-bold text-3xl md:text-4xl uppercase flex flex-col md:flex-row md:justify-between md:items-center gap-2">
-            <p>{dog.attributes.name}</p>
+          <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
+            <h1 className="text-3xl md:text-4xl font-bold uppercase">
+              {dog.attributes.name}
+            </h1>
 
             <button
               onClick={() => navigate(-1)}
-              className="font-sans text-lg md:text-2xl hover:underline cursor-pointer"
+              className="font-sans text-lg md:text-xl hover:underline self-start"
             >
               ← Go back
             </button>
           </div>
 
-          <p className="text-lg md:text-2xl leading-relaxed">
+          <p className="text-lg md:text-xl leading-relaxed">
             {dog.attributes.description}
           </p>
 
-          <div className="flex flex-col gap-3">
+          <div className="space-y-3">
             <div className="flex flex-wrap gap-4">
               <strong>Female Height:</strong>
               <span>{dog.attributes.female_height.min} min</span>
@@ -84,46 +87,53 @@ function DogDetails({ dog }) {
               <strong>Country:</strong> {dog.attributes.origin.country}
             </div>
 
-            <div className="flex flex-wrap gap-2 items-center">
-              <strong>Other Names:</strong>
+            {dog.attributes.other_names.length > 0 && (
+              <div className="flex flex-wrap gap-2 items-center">
+                <strong>Other Names:</strong>
 
-              {dog.attributes.other_names.map((name) => (
-                <span
-                  key={name}
-                  className="px-3 py-1 bg-gray-300 rounded-full text-sm"
-                >
-                  {name}
-                </span>
-              ))}
-            </div>
+                {dog.attributes.other_names.map((name) => (
+                  <span
+                    key={name}
+                    className="rounded-full bg-gray-300 px-3 py-1 text-sm"
+                  >
+                    {name}
+                  </span>
+                ))}
+              </div>
+            )}
 
-            <div className="border-t pt-4 mt-2">
-              {Object.entries(dog.attributes.traits).map(([key, value]) => (
-                <div
-                  key={key}
-                  className="grid grid-cols-[140px_1fr] gap-3 py-2"
-                >
-                  <div className="font-bold capitalize">
-                    {key.replaceAll("_", " ")}
+            <div className="border-t pt-4">
+              <h2 className="mb-4 text-2xl font-bold">Traits</h2>
+
+              <div className="grid gap-3 md:grid-cols-2">
+                {Object.entries(dog.attributes.traits).map(([key, value]) => (
+                  <div key={key} className="rounded-xl bg-gray-100 p-4">
+                    <p className="font-bold capitalize">
+                      {key.replaceAll("_", " ")}
+                    </p>
+
+                    <p>{String(value)}</p>
                   </div>
-
-                  <div>{String(value)}</div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {dog.attributes.images.slice(0, 4).map((image, index) => (
-          <img
-            key={index}
-            src={image.url}
-            alt={dog.attributes.name}
-            className="aspect-square object-cover rounded-2xl cursor-pointer hover:scale-105 transition duration-300"
-          />
-        ))}
+      <div className="mt-10">
+        <h2 className="mb-4 text-2xl font-bold">Gallery</h2>
+
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+          {dog.attributes.images.slice(0, 4).map((image, index) => (
+            <img
+              key={index}
+              src={image.url}
+              alt={dog.attributes.name}
+              className="aspect-square w-full rounded-2xl object-cover transition duration-300 hover:scale-105 cursor-pointer"
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
