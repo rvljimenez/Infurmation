@@ -102,17 +102,22 @@ function DogDetails({ dog }) {
               </div>
             )}
 
-            <div className="border-t pt-4">
-              <h2 className="mb-4 text-2xl font-bold">Traits</h2>
+            <div className="border-t pt-6">
+              <h2 className="mb-6 text-2xl font-bold">Traits</h2>
 
-              <div className="grid gap-3 md:grid-cols-2">
+              <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
                 {Object.entries(dog.attributes.traits).map(([key, value]) => (
-                  <div key={key} className="rounded-xl bg-gray-100 p-4">
-                    <p className="font-bold capitalize">
+                  <div
+                    key={key}
+                    className="rounded-xl bg-gray-100 p-4 overflow-hidden"
+                  >
+                    <p className="font-bold capitalize text-lg wrap-break-words">
                       {key.replaceAll("_", " ")}
                     </p>
 
-                    <p>{String(value)}</p>
+                    <p className="mt-2 text-gray-700 wrap-break-words">
+                      {String(value)}
+                    </p>
                   </div>
                 ))}
               </div>
