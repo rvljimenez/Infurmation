@@ -111,11 +111,11 @@ function DogDetails({ dog }) {
                     key={key}
                     className="rounded-xl bg-gray-100 p-4 overflow-hidden"
                   >
-                    <p className="font-bold capitalize text-lg wrap-break-words">
+                    <p className="font-bold capitalize text-lg break-words">
                       {key.replaceAll("_", " ")}
                     </p>
 
-                    <p className="mt-2 text-gray-700 wrap-break-words">
+                    <p className="mt-2 text-gray-700 break-words">
                       {String(value)}
                     </p>
                   </div>
