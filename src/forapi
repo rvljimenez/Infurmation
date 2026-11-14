@@ -1,0 +1,120 @@
+{
+  "data": [
+    {
+      "id": "f9643a80-af1d-422a-9f15-18d466822053",
+      "type": "breed",
+      "attributes": {
+        "name": "Caucasian Shepherd Dog",
+        "description": "The Caucasian Shepherd dog is a serious guardian breed and should never be taken lightly.",
+        "hypoallergenic": false,
+        "life": {
+          "min": 15,
+          "max": 20
+        },
+        "male_weight": {
+          "min": 50,
+          "max": 100
+        },
+        "female_weight": {
+          "min": 45,
+          "max": 70
+        },
+        "male_height": {
+          "min": 72,
+          "max": 75
+        },
+        "female_height": {
+          "min": 67,
+          "max": 70
+        },
+        "origin": {
+          "country": "Georgia",
+          "region": "Caucasus Mountains",
+          "era": "antiquity"
+        },
+        "coat": {
+          "type": "double",
+          "length": "long",
+          "colors": [
+            "gray",
+            "fawn",
+            "brindle",
+            "white"
+          ]
+        },
+        "traits": {
+          "energy": 3,
+          "trainability": 2,
+          "barking": 4,
+          "grooming": 4,
+          "shedding": 5,
+          "drooling": 3,
+          "good_with_children": 3,
+          "good_with_dogs": 2,
+          "good_with_strangers": 1,
+          "apartment_friendly": 1,
+          "exercise_minutes": 60,
+          "temperament": [
+            "fearless",
+            "self-confident",
+            "territorial"
+          ]
+        },
+        "other_names": [
+          "Caucasian Ovcharka",
+          "Kavkazskaia Ovtcharka",
+          "Nagazi"
+        ],
+        "recognized_by": [
+          "AKC",
+          "FCI",
+          "UKC"
+        ],
+        "sources": [
+          {
+            "url": "https://www.akc.org/dog-breeds/caucasian-shepherd-dog/",
+            "title": "Caucasian Shepherd Dog Dog Breed Information - AKC"
+          }
+        ],
+        "images": [
+          {
+            "id": "3f1c5f4e-1a6b-4f2e-9b8d-2c0e5a7d4b31",
+            "url": "https://images.dogapi.dog/caucasian-shepherd-dog.jpg",
+            "thumb": "https://images.dogapi.dog/caucasian-shepherd-dog-thumb.webp",
+            "medium": "https://images.dogapi.dog/caucasian-shepherd-dog-medium.webp",
+            "large": "https://images.dogapi.dog/caucasian-shepherd-dog-large.webp",
+            "attribution": {
+              "author": "Magdalena Niemiec",
+              "license": "CC BY-SA 3.0",
+              "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+              "source": "wikimedia_commons",
+              "source_url": "https://commons.wikimedia.org/wiki/File:Caucasian_Shepherd_Dog.jpg"
+            }
+          }
+        ]
+      },
+      "relationships": {
+        "group": {
+          "data": {
+            "id": "02124eb6-1baa-410c-90ea-6b8629fb0837",
+            "type": "group"
+          }
+        }
+      }
+    }
+  ],
+  "meta": {
+    "pagination": {
+      "current": 1,
+      "next": 2,
+      "last": 2,
+      "records": 340
+    }
+  },
+  "links": {
+    "self": "https://dogapi.dog/api/v2/breeds",
+    "current": "https://dogapi.dog/api/v2/breeds?page[number]=1",
+    "next": "https://dogapi.dog/api/v2/breeds?page[number]=2",
+    "last": "https://dogapi.dog/api/v2/breeds?page[number]=2"
+  }
+}
