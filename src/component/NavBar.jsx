@@ -1,4 +1,4 @@
-export function NavBar({ query, setQuery }) {
+export function NavBar() {
   return (
     <section className="relative h-150 w-full overflow-hidden rounded-b-3xl">
       <img
@@ -24,7 +24,7 @@ export function NavBar({ query, setQuery }) {
           Learn More About Dogs
         </h2>
 
-        <input
+        {/* <input
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           type="text"
@@ -47,7 +47,7 @@ export function NavBar({ query, setQuery }) {
             focus:ring-4
             focus:ring-orange-400/20
           "
-        />
+        /> */}
       </div>
     </section>
   );
